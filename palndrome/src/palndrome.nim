@@ -6,7 +6,9 @@ var back=word.len()-1
 var front=0
 
 while -1!=back:
-  echo(word[back],word[front])
+  if word[back]!=word[front]:
+    echo "Not Palandrome"
+    break
   dec(back,1)
   inc(front,1)
 
