@@ -1,5 +1,12 @@
 echo "Please Enter string"
 
-let word=readLine(stdin)
+let word="word"
 
-echo word
+var num=word.len()-1
+
+while -1!=num:
+  echo word[num]
+  dec(num,1)
+
+
+  
