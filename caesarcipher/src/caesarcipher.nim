@@ -10,6 +10,6 @@ for index in word:
   var encrypted:int64=(int)index
   encrypted=encrypted+key
   encrypted=encrypted mod 26
-  echo encrypted
+  echo (char)encrypted
   
 
