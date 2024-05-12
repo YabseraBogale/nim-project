@@ -4,4 +4,4 @@ const name ="Yabsera Bogale"
 
 const result=name.find("og")
 
-echo result
+echo(result,name[9],name[9+1])
