@@ -1,16 +1,35 @@
 from random import randint
 from database import Ethio
-from threading import Thread 
+import asyncio
 
 ethio=Ethio()
 
 ## testing threading
 
-def RandomNumberTest():
-    return randint(0,10)
+async def AddisAbeba():
+    print("EthioTele Regsisted at Addis Ababa")
+    number=randint(0,10)
+    print("EthioTele Regsisted at Addis Ababa number is",number)
+    ethio.Insert(number)
+    print("ok")
 
-def RandomNumber():
-    return ethio.Insert(randint(0,10))
+async def Jimma():
+    print("EthioTele Regsisted at Jimma")
+    number=randint(0,10)
+    print("EthioTele Regsisted at Jimma number is",number)
+    ethio.Insert(number)
+    print("ok")
 
 
-insertdatabasethread=Thread(target=RandomNumber)
+async def main():
+    maindatabase=await asyncio.gather(
+        AddisAbeba,
+        Jimma
+    )
+
+for i in range(0,10):
+    try:
+        asyncio.run(main())
+        print("Running",i,"times")
+    except Exception as e:
+        print(e)
