@@ -5,17 +5,18 @@ import asyncio
 ethio=Ethio()
 
 ## testing threading
-
+x=30
+y=40
 async def AddisAbeba():
     
-    number=randint(11,20)
+    number=randint(x,y)
     print("EthioTele Regsisted at Addis Ababa number is",number)
     await ethio.Insert(number)
     
 
 async def Jimma():
     
-    number=randint(11,20)
+    number=randint(x,y)
     print("EthioTele Regsisted at Jimma number is",number)
     await ethio.Insert(number)
 

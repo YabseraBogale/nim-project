@@ -18,7 +18,7 @@ class Ethio():
             self.connection.commit()
             return "ok"
         except Exception as e:
-            return e
+            print(phonenumber,"is already on the database")
     def CloseConnection(self):
         try:
             self.connection.close()
@@ -26,6 +26,13 @@ class Ethio():
         except Exception as e:
             return e
 
+    def Dropethio(self):
+        try:
+            statment="drop table ethio"
+            self.ponter.execute(statment)
+            self.connection.commit()
+            print("dropped ethio table ...")
+        except Exception as e:
+            print(e)
 
 
-test=Ethio()
