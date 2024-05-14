@@ -7,29 +7,28 @@ ethio=Ethio()
 ## testing threading
 
 async def AddisAbeba():
-    print("EthioTele Regsisted at Addis Ababa")
-    number=randint(0,10)
+    
+    number=randint(11,20)
     print("EthioTele Regsisted at Addis Ababa number is",number)
-    ethio.Insert(number)
-    print("ok")
+    await ethio.Insert(number)
+    
 
 async def Jimma():
-    print("EthioTele Regsisted at Jimma")
-    number=randint(0,10)
+    
+    number=randint(11,20)
     print("EthioTele Regsisted at Jimma number is",number)
-    ethio.Insert(number)
-    print("ok")
+    await ethio.Insert(number)
+
 
 
 async def main():
     maindatabase=await asyncio.gather(
-        AddisAbeba,
-        Jimma
+        AddisAbeba(),
+        Jimma(),
     )
 
 for i in range(0,10):
     try:
         asyncio.run(main())
-        print("Running",i,"times")
     except Exception as e:
         print(e)
