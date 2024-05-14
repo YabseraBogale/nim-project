@@ -1,14 +1,16 @@
-import sqlite3
+from random import randint
+from database import Ethio
+from threading import Thread 
 
-connection=sqlite3.Connection('ethio.db')
+ethio=Ethio()
+
+## testing threading
+
+def RandomNumberTest():
+    return randint(0,10)
+
+def RandomNumber():
+    return ethio.Insert(randint(0,10))
 
 
-pointer=connection.cursor()
-
-statement="""
-    create table ethio(
-        phonenumber int not null primary key
-    );
-"""
-
-pointer.execute(statement)
+insertdatabasethread=Thread(target=RandomNumber)
