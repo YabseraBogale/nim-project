@@ -1,8 +1,6 @@
 const letters:set[char]={'a'..'z','A'..'Z','0'..'9'}
-# const num={44,55,66}
+const num:set[char]={'4','5'}
 
-echo(letters)
-#echo(typeof(num))
+const tt=letters*num
 
-for i in letters:
-  echo i
+echo tt
