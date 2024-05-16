@@ -1,5 +1,5 @@
-const letters:set[char]={'a','b'}
+var letters:set[char]={'a','b'}
 
-const ff=letters+{'c','a'}
+letters=letters+{'c','a'}
 
-echo ff
+echo letters
