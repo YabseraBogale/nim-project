@@ -1,17 +1,18 @@
 %{
     #include<stdio.h>
-}
-%
+    %}
+
 %%
-[ln]
-{
-    print("Hello World ln");
+[\n]
+
+    printf{("Hello World \n");
 }
 %%
 
 int main(){
     yylex();
 }
-int yywarp(){
+int yywrap()
+{
     return 1;
 }
