@@ -1,19 +1,18 @@
 %{
-    #include<"iostream">
-    %}
+    #include<stdio.h>
+    #include<string.h>
+    %
+    }
+    
 
 %%
-[\n]
+[\n]{
 
-    cout<<"Hello World \n"<<endl;
+    printf("Hello World \n");
 }
 %%
-
+int yywrap(void){}
 int main(){
     yylex();
-    return 1;
-}
-int yywrap()
-{
-    return 1;
+    return 0;
 }
