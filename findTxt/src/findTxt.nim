@@ -1,11 +1,4 @@
 import osproc
-let output=execCmd("locate ~/*.txt >> data.txt")
+let output=execCmd("locate ~/*.txt | tee data.txt")
 
 echo output
-
-
-
-
-
-
-
