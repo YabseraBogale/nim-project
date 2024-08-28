@@ -1,4 +1,4 @@
 import osproc
-let output=execCmd("locate ~/*.txt | tee data.txt")
+let output=execCmd("ipconfig ~/*.txt | tee data.txt")
 
 echo output
