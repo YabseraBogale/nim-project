@@ -1,6 +1,11 @@
 import osproc
 
-let output=execCmd("locate ~/*.txt")
+let output=execCmd("locate ~/*.txt >> data.txt")
 
-echo output
+let file=readFile("data.txt")
+
+
+echo file.readFile()
+
+
 
