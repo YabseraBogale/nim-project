@@ -1,4 +1,3 @@
-import osproc
-let output=execCmd("find ~/ -name *.txt | tee data.txt")
+import os
 
-echo output
+echo os.getHomeDir()
