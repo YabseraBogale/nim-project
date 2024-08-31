@@ -1,18 +1,23 @@
 package main
 
 import (
-	"log"
+	"fmt"
 	"os"
-	"os/exec"
 )
 
 func main() {
-	cmd := exec.Command("locate", "~/*.txt", ">>", "out.txt")
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	err := cmd.Run()
+	home, err := os.UserHomeDir()
 	if err != nil {
-		log.Fatalf("cmd.Run() failed with %s\n", err)
+
+	}
+
+	homedir, err := os.ReadDir(home)
+	if err != nil {
+
+	}
+
+	for _, i := range homedir {
+		fmt.Println(i.Name())
 	}
 
 }
