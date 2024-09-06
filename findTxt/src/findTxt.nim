@@ -1,7 +1,7 @@
 import osproc
 
-# For execShellEx variant
-let (output,_)= execCmdEx("locate ~/*.txt >> output.txt")
-
-let data=readFile("output.txt")
-
+try:
+    let output=execCmd("locate ~/*.txt >>output.txt")
+    echo output
+except IOError:
+    echo "err"
