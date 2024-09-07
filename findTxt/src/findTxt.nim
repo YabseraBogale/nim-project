@@ -1,7 +1,7 @@
-import osproc
-
+import os,std/private/osappdirs
 try:
-    let output=execCmd("locate ~/*.txt >>output.txt")
-    echo output
-except IOError:
-    echo "err"
+    var home:string=getHomeDir()
+    var result=walkDir(home,false,true,false)
+
+except Exception as e:
+    echo e.msg
